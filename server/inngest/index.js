@@ -114,7 +114,7 @@ const SyncWorkspaceDeletion = inngest.createFunction(
 
 // Inngest function to save workspace data to a database
 const SyncWorkspaceMemberCreation = inngest.createFunction(
-    {id : 'sync-workspace-member-from-clerk'},
+    {id : 'sync-workspacemember-from-clerk'},
     {event : "clerk/organizationInvitation.accepted"},
     async({event}) => {
         const {data} = event
@@ -130,4 +130,4 @@ const SyncWorkspaceMemberCreation = inngest.createFunction(
 )
 
 // Create an empty array where we'll export future Inngest functions
-export const functions = [SyncUserCreation , SyncUserDeletion , SyncUserUpdation , SyncWorkspaceCreation , SyncUserUpdation , SyncWorkspaceDeletion , SyncWorkspaceMemberCreation];
+export const functions = [SyncUserCreation , SyncUserDeletion , SyncUserUpdation , SyncWorkspaceCreation , SyncWorkspaceUpdation , SyncWorkspaceDeletion , SyncWorkspaceMemberCreation];
